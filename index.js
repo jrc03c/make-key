@@ -1,10 +1,10 @@
 const tools = require("js-math-tools")
 
 function makeKey(keyLength, keySeed){
-  assert(tools.math.isNumber(keyLength) && parseInt(keyLength) === keyLength, "`keyLength` must be an integer!")
-  
+  tools.misc.assert(tools.math.isNumber(keyLength) && parseInt(keyLength) === keyLength, "`keyLength` must be an integer!")
+
   if (keySeed){
-    assert(tools.math.isNumber(keySeed) && parseInt(keySeed) === keySeed, "`keySeed` must be an integer!")
+    tools.misc.assert(tools.math.isNumber(keySeed) && parseInt(keySeed) === keySeed, "`keySeed` must be an integer!")
     tools.math.seed(keySeed)
   }
 
