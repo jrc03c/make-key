@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 const tools = require("js-math-tools")
 
 function makeKey(keyLength, keySeed){
@@ -16,9 +15,3 @@ function makeKey(keyLength, keySeed){
 }
 
 module.exports = makeKey
-
-if (require.main === module){
-  let keyLength = parseInt(process.argv[2])
-  let keySeed = process.argv.length > 3 ? parseInt(process.argv[3]) : null
-  console.log(makeKey(keyLength, keySeed))
-}
