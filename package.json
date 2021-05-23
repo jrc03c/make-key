@@ -11,5 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "js-math-tools": "git+https://gitlab.com/jrc03c/js-math-tools.git"
+  },
+  "bin": {
+    "makeKey": "./index.js"
   }
 }
