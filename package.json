@@ -13,6 +13,7 @@
     "js-math-tools": "git+https://gitlab.com/jrc03c/js-math-tools.git"
   },
   "bin": {
-    "makeKey": "./bin.js"
+    "makeKey": "./bin.js",
+    "key": "./bin.js"
   }
 }
