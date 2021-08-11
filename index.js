@@ -1,4 +1,4 @@
-const { assert, isNumber, int, seed, random } = require("js-math-tools")
+const { assert, isNumber, int, seed, random } = require("@jrc03c/js-math-tools")
 
 function makeKey(keyLength, keySeed) {
   assert(

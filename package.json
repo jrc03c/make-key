@@ -14,6 +14,6 @@
     "key": "./bin.js"
   },
   "dependencies": {
-    "js-math-tools": "github:jrc03c/js-math-tools"
+    "@jrc03c/js-math-tools": "^0.0.1"
   }
 }
