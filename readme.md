@@ -3,13 +3,13 @@
 **Installation:**
 
 ```bash
-npm install --save https://gitlab.com/jrc03c/make-key
+npm install --save https://github.com/jrc03c/make-key
 ```
 
 **Usage:**
 
 ```js
-let makeKey = require("make-key")
+let makeKey = require("@jrc03c/make-key")
 let keyLength = 32
 let keySeed = 1234
 
