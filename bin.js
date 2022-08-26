@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const { exec } = require("child_process")
 const makeKey = require("./index.js")
 
 if (typeof require !== "undefined" && require.main === module) {
@@ -14,5 +15,10 @@ if (typeof require !== "undefined" && require.main === module) {
     keySeed = parseInt(process.argv[3])
   } catch (e) {}
 
-  console.log(makeKey(keyLength, keySeed))
+  const key = makeKey(keyLength, keySeed)
+  console.log(key)
+
+  try {
+    exec(`echo "${key}" | xsel -b`, () => {})
+  } catch (e) {}
 }

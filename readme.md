@@ -1,12 +1,16 @@
-**make-key** generates alphanumeric strings of arbitrary length. 
+# Intro
 
-**Installation:**
+**make-key** generates alphanumeric strings of arbitrary length.
+
+# Node / browser
+
+## Installation
 
 ```bash
 npm install --save https://github.com/jrc03c/make-key
 ```
 
-**Usage:**
+## Usage
 
 ```js
 let makeKey = require("@jrc03c/make-key")
@@ -18,4 +22,27 @@ console.log(makeKey(keyLength))
 
 console.log(makeKey(keyLength, keySeed))
 // "dcb09fuuv3smirvqaetiyggvhap90e88"
+```
+
+# CLI
+
+## Installation
+
+```bash
+git clone https://github.com/jrc03c/make-key
+cd make-key
+npm link
+```
+
+Optionally, you can install `xsel` to automatically have the key copied to the clipboard:
+
+```bash
+sudo apt-get install -y xsel
+```
+
+## Usage
+
+```bash
+# key <length> <seed-integer>
+key 32 12345
 ```
