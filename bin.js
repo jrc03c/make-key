@@ -1,21 +1,30 @@
 #!/usr/bin/env node
 const { exec } = require("child_process")
-const makeKey = require("./index.js")
+const makeKey = require("./src/index.js")
 
 if (typeof require !== "undefined" && require.main === module) {
-  if (process.argv.length <= 2) {
+  const args = process.argv.slice(2)
+
+  if (args.length === 0) {
     console.log("You must specify a key length.")
     process.exit(0)
   }
 
-  let keyLength = parseInt(process.argv[2])
-  let keySeed = null
+  const keyLength = parseInt(args[0])
+  let keySeed, charset
 
-  try {
-    keySeed = parseInt(process.argv[3])
-  } catch (e) {}
+  if (args.length === 2) {
+    if (!isNaN(parseInt(args[1]))) {
+      keySeed = parseInt(args[1])
+    } else {
+      charset = args[1]
+    }
+  } else if (args.length > 2) {
+    keySeed = parseInt(args[1])
+    charset = args[2]
+  }
 
-  const key = makeKey(keyLength, keySeed)
+  const key = makeKey(keyLength, keySeed, charset)
   console.log(key)
 
   try {

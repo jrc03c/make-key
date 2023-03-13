@@ -12,10 +12,12 @@ npm install --save https://github.com/jrc03c/make-key
 
 ## Usage
 
+Node / bundlers:
+
 ```js
-let makeKey = require("@jrc03c/make-key")
-let keyLength = 32
-let keySeed = 1234
+const makeKey = require("@jrc03c/make-key")
+const keyLength = 32
+const keySeed = 1234
 
 console.log(makeKey(keyLength))
 // "8v1101x1whevcm1cgdhuq90e12549xri"
@@ -23,6 +25,30 @@ console.log(makeKey(keyLength))
 console.log(makeKey(keyLength, keySeed))
 // "dcb09fuuv3smirvqaetiyggvhap90e88"
 ```
+
+Browser:
+
+```html
+<script src="path/to/@jrc03c/make-key/dist/make-key.js"></script>
+<script>
+  // (makeKey is now in the global scope)
+
+  const keyLength = 32
+  const keySeed = 1234
+
+  console.log(makeKey(keyLength))
+  // "8v1101x1whevcm1cgdhuq90e12549xri"
+
+  console.log(makeKey(keyLength, keySeed))
+  // "dcb09fuuv3smirvqaetiyggvhap90e88"
+</script>
+```
+
+## API
+
+### `makeKey(length, seed, charset)`
+
+Returns a random string of length `length`. Can optionally be given a random `seed` value as a number and/or a `charset` as a string of characters from which to generate the new string.
 
 # CLI
 
@@ -43,6 +69,12 @@ sudo apt-get install -y xsel
 ## Usage
 
 ```bash
-# key <length> <seed-integer>
+# key <length> <seed>
 key 32 12345
 ```
+
+## API
+
+### `key <length> <seed> <charset>`
+
+These arguments mean the same thing as in the Node / browser API.
