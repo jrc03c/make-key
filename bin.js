@@ -28,6 +28,6 @@ if (typeof require !== "undefined" && require.main === module) {
   console.log(key)
 
   try {
-    exec(`echo "${key}" | xsel -b`, () => {})
+    exec(`echo -n "${key}" | xsel -b`, () => {})
   } catch (e) {}
 }
