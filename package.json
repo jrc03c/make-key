@@ -17,7 +17,7 @@
     "key": "./bin.js"
   },
   "dependencies": {
-    "@jrc03c/js-math-tools": "^0.0.58"
+    "@jrc03c/js-math-tools": "^0.0.63"
   },
   "devDependencies": {
     "esbuild": "^0.17.11",
